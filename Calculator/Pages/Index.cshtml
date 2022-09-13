@@ -5,6 +5,26 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Taschenrechner</h1>
+    <form asp-page="/Index">
+        <div class="form-group">
+            <label asp-for="Input.operator1">Operator 1:</label>
+            <input type="text" class="form-control" asp-for="Input.operator1" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.operator2">Operator 2:</label>
+            <input type="text" class="form-control" asp-for="Input.operator2" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.operand">Operand:</label>
+            <input type="text" class="form-control" asp-for="Input.operand" />
+        </div>
+        <input type="submit" />
+    </form>
+    @if (!string.IsNullOrWhiteSpace(Model.Input.result))
+    {
+       <div class="m-3">
+            Das Ergebnis ist @Model.Input.result
+        </div>
+    }
 </div>
