@@ -23,13 +23,14 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPost()
     {
-        int operator1 = Convert.ToInt16(Input.operator1);
-        int operator2 = Convert.ToInt16(Input.operator2);
-        char operation = Input.operand[0];
+        int operand1 = Convert.ToInt16(Input.operand1);
+        int operand2 = Convert.ToInt16(Input.operand2);
+        char operation = Input.Operator[0];
         if (operation == '+')
         {
-            this.Input.result = (operator1 + operator2).ToString();
+            this.Input.result = (operand1 + operand2).ToString();
         }
+
         return this.Page();
     }
 }
